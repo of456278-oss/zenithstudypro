@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenith Study - All PW & Next Topper Batches Free</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #030509;
+        color: #e8e8e8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 18px;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    /* ============ BACKGROUND ============ */
+    .bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        background: radial-gradient(ellipse at top, #0a1428 0%, #030509 55%, #000 100%);
+    }
+
+    /* Animated gradient mesh */
+    .mesh {
+        position: absolute;
+        inset: -20%;
+        background:
+            radial-gradient(circle at 15% 20%, rgba(255, 200, 50, 0.18), transparent 35%),
+            radial-gradient(circle at 85% 15%, rgba(80, 130, 255, 0.15), transparent 40%),
+            radial-gradient(circle at 75% 85%, rgba(255, 130, 30, 0.14), transparent 40%),
+            radial-gradient(circle at 20% 90%, rgba(140, 60, 220, 0.12), transparent 40%);
+        filter: blur(60px);
+        animation: meshMove 24s ease-in-out infinite alternate;
+    }
+
+    @keyframes meshMove {
+        0%   { transform: translate(0,0) scale(1); }
+        50%  { transform: translate(2%, -2%) scale(1.06); }
+        100% { transform: translate(-2%, 2%) scale(1); }
+    }
+
+    /* Gold beam sweep */
+    .beam {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.9), transparent);
+        filter: blur(0.5px);
+        box-shadow: 0 0 40px 4px rgba(255, 215, 0, 0.35);
+        animation: beamPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes beamPulse {
+        0%, 100% { opacity: 0.5; width: 50%; }
+        50% { opacity: 1; width: 80%; }
+    }
+
+    /* Noise grain */
+    .grain {
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+        opacity: 0.09;
+        mix-blend-mode: overlay;
+    }
+
+    /* Grid */
+    .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+        background-size: 55px 55px;
+        mask-image: radial-gradient(ellipse at 50% 40%, black 15%, transparent 70%);
+        -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 15%, transparent 70%);
+    }
+
+    /* Orbs */
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.55;
+    }
+    .o1 { width: 340px; height: 340px; background: #ffb800; top: -100px; left: -120px; animation: fl 16s ease-in-out infinite; }
+    .o2 { width: 380px; height: 380px; background: #1e40af; bottom: -140px; right: -140px; animation: fl 20s ease-in-out infinite reverse; }
+    .o3 { width: 200px; height: 200px; background: #ff6a00; top: 45%; right: -60px; opacity: 0.35; animation: fl 18s ease-in-out infinite; }
+
+    @keyframes fl {
+        0%, 100% { transform: translate(0,0); }
+        50% { transform: translate(50px, 40px); }
+    }
+
+    /* ============ CARD ============ */
+    .wrap {
+        position: relative;
+        z-index: 2;
+        max-width: 460px;
+        width: 100%;
+    }
+
+    /* Outer glow border */
+    .wrap::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        border-radius: 32px;
+        padding: 1px;
+        background: linear-gradient(160deg, rgba(255, 215, 0, 0.7) 0%, rgba(255, 215, 0, 0.05) 35%, rgba(255, 215, 0, 0.05) 65%, rgba(255, 215, 0, 0.5) 100%);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .card {
+        position: relative;
+        background: linear-gradient(165deg, rgba(18, 24, 38, 0.92) 0%, rgba(6, 9, 16, 0.96) 100%);
+        backdrop-filter: blur(28px) saturate(160%);
+        -webkit-backdrop-filter: blur(28px) saturate(160%);
+        border-radius: 32px;
+        padding: 46px 30px 30px;
+        text-align: center;
+        box-shadow:
+            0 40px 100px rgba(0, 0, 0, 0.8),
+            0 0 60px rgba(255, 200, 40, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        animation: cardIn 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        overflow: hidden;
+    }
+
+    @keyframes cardIn {
+        from { opacity: 0; transform: translateY(40px) scale(0.96); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Shine sweep on card */
+    .card::after {
+        content: '';
+        position: absolute;
+        top: -60%;
+        left: -60%;
+        width: 80%;
+        height: 220%;
+        background: linear-gradient(120deg, transparent 40%, rgba(255, 215, 0, 0.06) 50%, transparent 60%);
+        transform: rotate(25deg);
+        animation: shine 7s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes shine {
+        0%, 100% { left: -60%; }
+        50% { left: 120%; }
+    }
+
+    /* ============ BADGE ============ */
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 14px;
+        border-radius: 100px;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 150, 0, 0.08));
+        border: 1px solid rgba(255, 215, 0, 0.35);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: #ffd700;
+        margin-bottom: 22px;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+    }
+
+    .badge .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00e07a;
+        box-shadow: 0 0 8px #00e07a;
+        animation: blink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+
+    /* ============ LOGO ============ */
+    .logo-wrap {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+
+    .logo-glow {
+        position: absolute;
+        inset: -30px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.35) 0%, transparent 65%);
+        filter: blur(15px);
+        animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+        0%, 100% { transform: scale(0.95); opacity: 0.7; }
+        50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Rotating tick ring */
+    .tick-ring {
+        position: absolute;
+        inset: -16px;
+        border-radius: 50%;
+        animation: spin 12s linear infinite;
+    }
+
+    .tick-ring::before,
+    .tick-ring::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ffd700;
+        box-shadow: 0 0 12px #ffd700, 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    .tick-ring::after {
+        top: auto;
+        bottom: 0;
+        background: #ffb800;
+        width: 6px;
+        height: 6px;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .logo-box {
+        position: relative;
+        width: 124px;
+        height: 124px;
+        border-radius: 50%;
+        padding: 4px;
+        background: linear-gradient(135deg, #ffe259, #ffd700 30%, #ff9500 60%, #ffd700 100%);
+        box-shadow:
+            0 0 40px rgba(255, 215, 0, 0.55),
+            0 0 90px rgba(255, 215, 0, 0.25),
+            inset 0 0 25px rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        background: #06090f;
+        border: 3px solid #06090f;
+    }
+
+    /* ============ TEXT ============ */
+    .title {
+        font-family: 'Sora', sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: -0.6px;
+        line-height: 1.1;
+        background: linear-gradient(180deg, #fff8dc 0%, #ffd700 42%, #b8860b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+        filter: drop-shadow(0 2px 20px rgba(255, 215, 0, 0.25));
+    }
+
+    .subtitle {
+        font-size: 11px;
+        font-weight: 500;
+        color: #7d8fa6;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 26px;
+    }
+
+    /* ============ HIGHLIGHT BOX ============ */
+    .highlight {
+        position: relative;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.09), rgba(255, 150, 0, 0.04));
+        border: 1px solid rgba(255, 215, 0, 0.22);
+        margin-bottom: 22px;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .highlight::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(180deg, #ffd700, #ff9500);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    }
+
+    .hl-label {
+        display: block;
+        font-size: 9.5px;
+        font-weight: 700;
+        letter-spacing: 2.2px;
+        text-transform: uppercase;
+        color: #ffd700;
+        margin-bottom: 6px;
+    }
+
+    .hl-text {
+        font-size: 13px;
+        font-weight: 500;
+        color: #dfe6ef;
+        line-height: 1.55;
+        letter-spacing: 0.2px;
+    }
+
+    .hl-text strong {
+        color: #ffd700;
+        font-weight: 700;
+    }
+
+    /* ============ FEATURES ============ */
+    .features {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .feat {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 12.5px;
+        color: #c5d2e0;
+        font-weight: 400;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+
+    .feat:hover {
+        background: rgba(255, 215, 0, 0.06);
+        border-color: rgba(255, 215, 0, 0.25);
+        transform: translateX(4px);
+    }
+
+    .feat .tick {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffd700, #ff9500);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+    }
+
+    .feat .tick svg {
+        width: 11px;
+        height: 11px;
+        stroke: #0a0500;
+        stroke-width: 3.5;
+        fill: none;
+    }
+
+    .feat span strong {
+        color: #ffd700;
+        font-weight: 700;
+    }
+
+    /* ============ DOWNLOAD BUTTON ============ */
+    .btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 20px 24px;
+        font-family: 'Sora', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        color: #1a1000;
+        background: linear-gradient(135deg, #ffe259 0%, #ffd700 25%, #ffb800 55%, #ff9500 100%);
+        border: none;
+        border-radius: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        box-shadow:
+            0 14px 35px rgba(255, 190, 20, 0.4),
+            0 5px 12px rgba(0, 0, 0, 0.45),
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.55),
+            inset 0 -3px 0 rgba(160, 90, 0, 0.35);
+        text-transform: uppercase;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 55%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+        transition: left 0.75s ease;
+    }
+
+    .btn:hover::before { left: 140%; }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow:
+            0 22px 50px rgba(255, 190, 20, 0.6),
+            0 8px 18px rgba(0, 0, 0, 0.5),
+            inset 0 1.5px 0 rgba(255, 255, 255, 0.65),
+            inset 0 -3px 0 rgba(160, 90, 0, 0.35);
+    }
+
+    .btn:active {
+        transform: translateY(-1px) scale(0.99);
+    }
+
+    .btn svg {
+        width: 20px;
+        height: 20px;
+        stroke: #1a1000;
+        stroke-width: 2.6;
+        fill: none;
+        flex-shrink: 0;
+    }
+
+    /* Small trust line */
+    .trust {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 12px;
+        font-size: 10.5px;
+        color: #647a94;
+        letter-spacing: 0.4px;
+        font-weight: 400;
+    }
+
+    .trust .stars {
+        color: #ffd700;
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
+
+    /* ============ DIVIDER ============ */
+    .divider {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 28px 0 20px;
+        color: #566b83;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.28), transparent);
+    }
+
+    /* ============ SOCIALS ============ */
+    .socials {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .social {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 12px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 215, 0, 0.18);
+        color: #c5d2e0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 130%, rgba(255, 215, 0, 0.3), transparent 70%);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    .social:hover::before { opacity: 1; }
+
+    .social:hover {
+        border-color: rgba(255, 215, 0, 0.65);
+        color: #ffd700;
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45), 0 0 22px rgba(255, 215, 0, 0.18);
+    }
+
+    .social svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .social:hover svg { transform: scale(1.15); }
+
+    /* ============ FOOTER ============ */
+    .footer {
+        font-size: 9.5px;
+        color: #45586e;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding-top: 4px;
+    }
+
+    .footer span {
+        color: #ffd700;
+        font-weight: 700;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 480px) {
+        body { padding: 22px 14px; }
+        .card {
+            padding: 40px 22px 26px;
+            border-radius: 26px;
+        }
+        .logo-box { width: 108px; height: 108px; }
+        .title { font-size: 25px; }
+        .subtitle { font-size: 10px; letter-spacing: 3px; }
+        .highlight { padding: 14px 14px 14px 16px; }
+        .hl-text { font-size: 12px; }
+        .feat { font-size: 11.5px; padding: 9px 12px; }
+        .btn {
+            font-size: 13.5px;
+            padding: 18px 18px;
+            letter-spacing: 1.1px;
+        }
+        .social { font-size: 11px; padding: 12px 8px; }
+        .social svg { width: 16px; height: 16px; }
+        .trust { font-size: 9.5px; }
+    }
+</style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg">
+        <div class="mesh"></div>
+        <div class="beam"></div>
+        <div class="grid"></div>
+        <div class="grain"></div>
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+        <div class="orb o3"></div>
+    </div>
+
+    <main class="wrap">
+        <div class="card">
+
+            <!-- Live badge -->
+            <div class="badge">
+                <span class="dot"></span>
+                All Batches Free · Live Now
+            </div>
+
+            <!-- Logo -->
+            <div class="logo-wrap">
+                <div class="logo-glow"></div>
+                <div class="tick-ring"></div>
+                <div class="logo-box">
+                    <img
+                        src="https://img.sanishtech.com/u/ffae848ab8ea42146a51458714e4691c.jpeg"
+                        alt="Zenith Study"
+                        class="logo"
+                    >
+                </div>
+            </div>
+
+            <h1 class="title">Zenith Study</h1>
+            <p class="subtitle">Learn · Rise · Achieve</p>
+
+            <!-- Highlight -->
+            <div class="highlight">
+                <span class="hl-label">Free Access</span>
+                <p class="hl-text">
+                    All <strong>PW (Physics Wallah)</strong> and <strong>Next Topper</strong> batches available
+                    <strong>100% free</strong>. No payment, no hidden charges.
+                </p>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feat">
+                    <span class="tick">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>All <strong>PW</strong> batches unlocked</span>
+                </div>
+                <div class="feat">
+                    <span class="tick">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>All <strong>Next Topper</strong> batches free</span>
+                </div>
+                <div class="feat">
+                    <span class="tick">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Premium lectures & notes included</span>
+                </div>
+            </div>
+
+            <!-- Download -->
+            <a
+                href="https://freewebsitetoapp.cloudserverbox.com/app-data/paid-apps-starter/12529128357/L4ewlMW5/freewebsitetoapp_com-12529128357.zip"
+                class="btn"
+                download
+            >
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Now
+            </a>
+
+            <div class="trust">
+                <span class="stars">★★★★★</span>
+                <span>Trusted by thousands of students</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider">Follow Us</div>
+
+            <!-- Socials -->
+            <div class="socials">
+                <a
+                    href="https://instagram.com/_omar.zenith"
+                    target="_blank"
+                    rel="noopener"
+                    class="social"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5.5" ry="5.5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                    Instagram
+                </a>
+
+                <a
+                    href="https://youtube.com/@omarzenithvlx"
+                    target="_blank"
+                    rel="noopener"
+                    class="social"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/>
+                    </svg>
+                    YouTube
+                </a>
+            </div>
+
+            <p class="footer">Crafted by <span>OMAR ZENITH</span></p>
+        </div>
+    </main>
+</body>
+</html>
